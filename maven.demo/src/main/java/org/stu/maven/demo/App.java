@@ -20,6 +20,7 @@ import org.quincy.rock.core.util.StringUtil;
 public class App {
 	public static void main(String[] args) {
 
+		testRock();
 		testIO();
 		testLang();
 		// System.out.println( "Hello World!" );
@@ -88,7 +89,7 @@ public class App {
 
 	private static void testIO() {
 		File dir = SystemUtils.getUserDir();
-		System.out.println(dir);
+		//	System.out.println(dir);
 		//File srcfile = new File(dir, "pom.xml");
 		File destFile = new File("D:\\文档\\StudyTxs\\shixun\\pom.xml");
 		//
@@ -125,7 +126,7 @@ public class App {
 				//				});
 
 				//表达式
-				list.forEach(line -> System.out.println(line));
+				//list.forEach(line -> System.out.println(line));
 
 			} finally {
 				//fis.close();
@@ -140,8 +141,24 @@ public class App {
 
 	}
 
-	
-	
-	
-	
+	public static void testRock() {
+
+		String str = StringUtil.getUniqueIdentifierName("var");
+		str = "D:\\文档\\StudyTxs\\shixun\\" + str + ".txt";
+		System.out.println(str);
+		str = StringUtil.str2hex("123465");
+		System.out.println(str);
+		str = StringUtil.hex2Str(str);
+		System.out.println(str);
+
+		str = StringUtil.toCamelString("dept-name", '-');
+		System.out.println(str);
+		str = StringUtil.objName2DbName("deptName", "f-", '-');
+		System.out.println(str);
+		str = StringUtil.dbName2ObjName(str, "f-", '-');
+		System.out.println(str);
+		
+		
+	}
+
 }
