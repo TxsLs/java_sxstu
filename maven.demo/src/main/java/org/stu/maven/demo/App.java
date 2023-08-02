@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.List;
+import java.util.function.Consumer;
 
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.IOUtils;
@@ -88,33 +89,43 @@ public class App {
 	private static void testIO() {
 		File dir = SystemUtils.getUserDir();
 		System.out.println(dir);
-		File srcfile = new File(dir, "pom.xml");
-		File destFile = new File("d:\\pom123.xml");
-//
-//		try {
-//			FileUtils.copyFile(srcfile, destFile);
-//		} catch (IOException e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		}
-//		System.out.println(destFile.exists());
+		//File srcfile = new File(dir, "pom.xml");
+		File destFile = new File("D:\\文档\\StudyTxs\\shixun\\pom.xml");
+		//
+		//		try {
+		//			FileUtils.copyFile(srcfile, destFile);
+		//		} catch (IOException e) {
+		//			// TODO Auto-generated catch block
+		//			e.printStackTrace();
+		//		}
+		//		System.out.println(destFile.exists());
 
 		try {
 			FileInputStream fis = FileUtils.openInputStream(destFile);
 
 			try {
-//				List<String> list = IOUtils.readLines(fis, "utf-8");
+				//				List<String> list = IOUtils.readLines(fis, "utf-8");
 				List<String> list = IOUtils.readLines(fis, StringUtil.UTF_8);
-//				for (String lis : list) {
-//
-//					System.out.println(lis);
-//				}
-				
-				for(int i=0,l=list.size();i<l;i++) {
-					String string=list.get(i);
-					System.out.println(string);
-				}
-				
+				//				for (String lis : list) {
+				//
+				//					System.out.println(lis);
+				//				}
+
+				//				for(int i=0,l=list.size();i<l;i++) {
+				//					String string=list.get(i);
+				//					System.out.println(string);
+				//				}
+
+				//				list.forEach(new Consumer<String>() {
+				//					@Override
+				//					public void accept(String line) {
+				//						System.out.println(line);
+				//						
+				//					}
+				//				});
+
+				//表达式
+				list.forEach(line -> System.out.println(line));
 
 			} finally {
 				//fis.close();
@@ -126,12 +137,11 @@ public class App {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
-		
-		
-		
-		
 
 	}
 
+	
+	
+	
+	
 }
