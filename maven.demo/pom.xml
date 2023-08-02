@@ -8,7 +8,8 @@
   <packaging>jar</packaging>
 
   <name>maven.demo</name>
-  <description>maven小工具.</description>
+ 
+  <description>maven小工具!</description>
   <url>https://gitee.com/TxsLS/sxstu</url>
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
