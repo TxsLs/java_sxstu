@@ -69,17 +69,13 @@ public class App {
 		System.out.println("java用户目录：" + file);
 		System.out.println("is java 8:"+SystemUtils.IS_JAVA_1_8);
 		System.out.println("is java 11:"+SystemUtils.IS_JAVA_11);
-		if(SystemUtils.IS_OS_WINDOWS_2003) {
-			System.out.println("win10");
+		if(SystemUtils.IS_OS_WINDOWS_10) {
+			System.out.println("shi");
 		}else {
-			System.out.println("bushi");
+			System.out.println("bu");
 		}
 		
-		if(SystemUtils.isJavaAwtHeadless()) {
-			System.out.println("win10");
-		}else {
-			System.out.println("bushi");
-		}
+		
 	}
 
 }
