@@ -3,6 +3,7 @@ package org.stu.maven.demo;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.util.Date;
 import java.util.List;
 import java.util.function.Consumer;
 
@@ -10,8 +11,11 @@ import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.IOUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.SystemUtils;
+import org.quincy.rock.core.util.DateUtil;
 import org.quincy.rock.core.util.IOUtil;
 import org.quincy.rock.core.util.StringUtil;
+import org.stu.maven.demo.test.StudyRock;
+import org.stu.maven.demo.test.StudyRockMini;
 
 /**
  * Hello world!
@@ -19,11 +23,12 @@ import org.quincy.rock.core.util.StringUtil;
  */
 public class App {
 	public static void main(String[] args) {
-
+		
 		testRock();
 		testIO();
 		testLang();
 		// System.out.println( "Hello World!" );
+	
 	}
 
 	private static void testLang() {
@@ -71,14 +76,14 @@ public class App {
 		//		strr = SystemUtils.getUserName();
 		//		System.out.println("用户名：" + strr);
 		//
-		//		File file = SystemUtils.getJavaHome();
-		//		System.out.println("java变量：" + file);
-		//		file = SystemUtils.getJavaIoTmpDir();
-		//		System.out.println("java临时目录：" + file);
-		//		file = SystemUtils.getUserDir();
-		//		System.out.println("java用户目录：" + file);
-		//		System.out.println("is java 8:"+SystemUtils.IS_JAVA_1_8);
-		//		System.out.println("is java 11:"+SystemUtils.IS_JAVA_11);
+//				File file = SystemUtils.getJavaHome();
+//				System.out.println("java变量：" + file);
+//				file = SystemUtils.getJavaIoTmpDir();
+//				System.out.println("java临时目录：" + file);
+//				file = SystemUtils.getUserDir();
+//				System.out.println("java用户目录：" + file);
+//				System.out.println("is java 8:"+SystemUtils.IS_JAVA_1_8);
+//				System.out.println("is java 11:"+SystemUtils.IS_JAVA_11);
 		//		if(SystemUtils.IS_OS_WINDOWS_10) {
 		//			System.out.println("shi");
 		//		}else {
@@ -159,6 +164,14 @@ public class App {
 		System.out.println(str);
 		
 		
+	StudyRockMini.studyCoreUtil();
+		
+		Date date=	DateUtil.getDateByWord("today");
+		System.out.println(date);
+		date=DateUtil.getDateByWord("tomorrow", date);
+		System.out.println(date);
+		StudyRock.studyRockUtil_DupleStartup();
+	
 	}
 
 }
