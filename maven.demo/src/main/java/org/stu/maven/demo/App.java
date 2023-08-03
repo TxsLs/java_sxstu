@@ -3,19 +3,29 @@ package org.stu.maven.demo;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
+import java.util.Scanner;
 import java.util.function.Consumer;
 
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.IOUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.SystemUtils;
+import org.apache.commons.logging.LogFactory;
+import org.omg.CORBA.PRIVATE_MEMBER;
+import org.quincy.rock.core.os.Cpu;
+import org.quincy.rock.core.os.CpuCoreInfo;
 import org.quincy.rock.core.util.DateUtil;
 import org.quincy.rock.core.util.IOUtil;
+import org.quincy.rock.core.util.RockUtil;
 import org.quincy.rock.core.util.StringUtil;
+import org.slf4j.Logger;
+import org.stu.maven.demo.test.StudyAlgorithm;
 import org.stu.maven.demo.test.StudyRock;
 import org.stu.maven.demo.test.StudyRockMini;
+import org.stu.maven.demo.test.jia;
 
 /**
  * Hello world!
@@ -23,12 +33,30 @@ import org.stu.maven.demo.test.StudyRockMini;
  */
 public class App {
 	public static void main(String[] args) {
-		
-		testRock();
-		testIO();
-		testLang();
+		//		testrockmi();
+		//		testRock();
+		//		testIO();
+		//		testLang();
 		// System.out.println( "Hello World!" );
-	
+
+		//		Scanner scanner = new Scanner(System.in);
+		//		int i = scanner.nextInt();	
+		//		
+		//		List<Integer> list=jia.test(i);
+		//		list.forEach(((s) -> System.out.print(s + "*")));
+
+		//jia.arr();
+
+		int a[] = { 1, 2, 3, 4, 5, 6, 7 };
+		String arrs = Arrays.toString(a);
+		System.out.print(arrs);
+		a = jia.reverse(a);
+		String arrsString = Arrays.toString(a);
+		System.out.print(arrsString);
+
+		//		
+		//		List<Integer> list = StudyAlgorithm.algorithm(i);
+		//		list.forEach(((n) -> System.out.print(n + "*")));
 	}
 
 	private static void testLang() {
@@ -76,14 +104,14 @@ public class App {
 		//		strr = SystemUtils.getUserName();
 		//		System.out.println("用户名：" + strr);
 		//
-//				File file = SystemUtils.getJavaHome();
-//				System.out.println("java变量：" + file);
-//				file = SystemUtils.getJavaIoTmpDir();
-//				System.out.println("java临时目录：" + file);
-//				file = SystemUtils.getUserDir();
-//				System.out.println("java用户目录：" + file);
-//				System.out.println("is java 8:"+SystemUtils.IS_JAVA_1_8);
-//				System.out.println("is java 11:"+SystemUtils.IS_JAVA_11);
+		//				File file = SystemUtils.getJavaHome();
+		//				System.out.println("java变量：" + file);
+		//				file = SystemUtils.getJavaIoTmpDir();
+		//				System.out.println("java临时目录：" + file);
+		//				file = SystemUtils.getUserDir();
+		//				System.out.println("java用户目录：" + file);
+		//				System.out.println("is java 8:"+SystemUtils.IS_JAVA_1_8);
+		//				System.out.println("is java 11:"+SystemUtils.IS_JAVA_11);
 		//		if(SystemUtils.IS_OS_WINDOWS_10) {
 		//			System.out.println("shi");
 		//		}else {
@@ -162,16 +190,41 @@ public class App {
 		System.out.println(str);
 		str = StringUtil.dbName2ObjName(str, "f-", '-');
 		System.out.println(str);
-		
-		
-	StudyRockMini.studyCoreUtil();
-		
-		Date date=	DateUtil.getDateByWord("today");
-		System.out.println(date);
-		date=DateUtil.getDateByWord("tomorrow", date);
-		System.out.println(date);
-		StudyRock.studyRockUtil_DupleStartup();
-	
+
+		StudyRockMini.studyCoreUtil();
+
+		Date date;
+		date = DateUtil.getDateByWord("today");
+		System.out.println(DateUtil.formatDate(date));
+		date = DateUtil.getDateByWord("yesterday", DateUtil.now());
+		System.out.println(DateUtil.formatDateTime(date));
+
+		//date=DateUtil.parseDate("2000-03-05");
+		date = DateUtil.parse("2000年03月05日", "yyyy年MM月dd日");
+		System.out.println(DateUtil.format(date, "yyyy年MM月dd日"));
+
+		//StudyRock.studyRockUtil_DupleStartup();
+
+	}
+
+	public static void testrockmi() {
+		Logger logger = RockUtil.getLogger(StudyRock.class);
+		if (RockUtil.isDupleStartup("maven.demo")) {
+			throw new UnsupportedOperationException("程序已启动！！！");
+
+		}
+		Date dt = DateUtil.parse("", "");
+		logger.info("程序已经启动...");
+		//			try {
+		//				Thread.sleep(5000);
+		//			} catch (InterruptedException e) {
+		//				// TODO Auto-generated catch block
+		//				e.printStackTrace();
+		//			}
+
+		DateUtil.sleep(10000);
+		logger.info("程序已经退出。");
+
 	}
 
 }
