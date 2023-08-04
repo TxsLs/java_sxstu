@@ -14,7 +14,7 @@ import org.apache.commons.io.IOUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.SystemUtils;
 import org.apache.commons.logging.LogFactory;
-import org.omg.CORBA.PRIVATE_MEMBER;
+
 import org.quincy.rock.core.os.Cpu;
 import org.quincy.rock.core.os.CpuCoreInfo;
 import org.quincy.rock.core.util.DateUtil;
@@ -39,24 +39,24 @@ public class App {
 		//		testLang();
 		// System.out.println( "Hello World!" );
 
-		//		Scanner scanner = new Scanner(System.in);
-		//		int i = scanner.nextInt();	
+				Scanner scanner = new Scanner(System.in);
+				int i = scanner.nextInt();	
 		//		
 		//		List<Integer> list=jia.test(i);
 		//		list.forEach(((s) -> System.out.print(s + "*")));
 
 		//jia.arr();
 
-		int a[] = { 1, 2, 3, 4, 5, 6, 7 };
-		String arrs = Arrays.toString(a);
-		System.out.print(arrs);
-		a = jia.reverse(a);
-		String arrsString = Arrays.toString(a);
-		System.out.print(arrsString);
+//		int a[] = { 1, 2, 3, 4, 5, 6, 7 };
+//		String arrs = Arrays.toString(a);
+//		System.out.print(arrs);
+//		a = jia.reverse(a);
+//		String arrsString = Arrays.toString(a);
+//		System.out.print(arrsString);
 
 		//		
-		//		List<Integer> list = StudyAlgorithm.algorithm(i);
-		//		list.forEach(((n) -> System.out.print(n + "*")));
+				List<Integer> list = StudyAlgorithm.algorithm(i);
+				list.forEach(((n) -> System.out.print(n + "*")));
 	}
 
 	private static void testLang() {
