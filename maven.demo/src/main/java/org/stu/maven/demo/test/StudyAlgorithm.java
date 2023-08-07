@@ -1,12 +1,14 @@
 package org.stu.maven.demo.test;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Scanner;
 
 import javax.annotation.processing.RoundEnvironment;
 
 import org.apache.commons.lang3.StringUtils;
+import org.quincy.rock.core.util.StringUtil;
 
 public class StudyAlgorithm {
 	/**
@@ -58,7 +60,7 @@ public class StudyAlgorithm {
 				} else {
 					arr[i][j] = arr[i - 1][j] + arr[i - 1][j - 1];
 				}
-		
+
 			}
 		}
 
@@ -66,6 +68,26 @@ public class StudyAlgorithm {
 			System.out.print(StringUtils.repeat(" ", row - i - 1) + StringUtils.repeat(" ", 39));
 			for (int j = 0; j <= i; j++) {
 				System.out.print(arr[i][j] + " ");
+			}
+			System.out.println();
+		}
+
+	}
+
+	public static void printLing(int r) {
+		int up = (r + 1) / 2;
+		for (int i = 0; i < up; i++) {
+			System.out.print(StringUtils.repeat("  ", r - i - 1));
+			for (int j = 0; j < (2 * i + 1); j++) {
+				System.out.print("* ");
+			}
+			System.out.println();
+		}
+		int down = r - up;
+		for (int i = 0; i < down; i++) {
+			System.out.print(StringUtils.repeat("  ", i + down + 1));
+			for (int j = 0; j < (down - i) * 2 - 1; j++) {
+				System.out.print("* ");
 			}
 			System.out.println();
 		}

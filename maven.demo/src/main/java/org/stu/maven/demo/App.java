@@ -65,8 +65,8 @@ public class App {
 		System.out.print("输入打印的行数：");	
 		Scanner sc=new Scanner(System.in);
 		int row=sc.nextInt();
-		StudyAlgorithm.YHpirnt(row);
-		
+	//	StudyAlgorithm.YHpirnt(row);
+		StudyAlgorithm.printLing(row);
 		
 		
 		
