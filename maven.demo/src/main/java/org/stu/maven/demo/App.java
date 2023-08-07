@@ -38,13 +38,15 @@ public class App {
 		//		testIO();
 		//		testLang();
 		// System.out.println( "Hello World!" );
-
-				Scanner scanner = new Scanner(System.in);
-				int i = scanner.nextInt();	
+//
+		
+//				Scanner scanner = new Scanner(System.in);
+//				int i = scanner.nextInt();	
 		//		
 		//		List<Integer> list=jia.test(i);
 		//		list.forEach(((s) -> System.out.print(s + "*")));
 
+		
 		//jia.arr();
 
 //		int a[] = { 1, 2, 3, 4, 5, 6, 7 };
@@ -55,8 +57,20 @@ public class App {
 //		System.out.print(arrsString);
 
 		//		
-				List<Integer> list = StudyAlgorithm.algorithm(i);
-				list.forEach(((n) -> System.out.print(n + "*")));
+//				List<Integer> list = StudyAlgorithm.algorithm(i);
+//				list.forEach(((n) -> System.out.print(n + "*")));
+	
+		
+		
+		System.out.print("输入打印的行数：");	
+		Scanner sc=new Scanner(System.in);
+		int row=sc.nextInt();
+		StudyAlgorithm.YHpirnt(row);
+		
+		
+		
+		
+		
 	}
 
 	private static void testLang() {
@@ -175,7 +189,6 @@ public class App {
 	}
 
 	public static void testRock() {
-
 		String str = StringUtil.getUniqueIdentifierName("var");
 		str = "D:\\文档\\StudyTxs\\shixun\\" + str + ".txt";
 		System.out.println(str);
@@ -213,7 +226,7 @@ public class App {
 			throw new UnsupportedOperationException("程序已启动！！！");
 
 		}
-		Date dt = DateUtil.parse("", "");
+	
 		logger.info("程序已经启动...");
 		//			try {
 		//				Thread.sleep(5000);
