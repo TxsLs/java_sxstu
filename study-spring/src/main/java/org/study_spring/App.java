@@ -11,12 +11,12 @@ import org.study_spring.impl.HelloDaoImpl;
  */
 public class App {
 	public static void main(String[] args) {
-		/*	HelloDao dao = new HelloDaoImpl();
-			dao.sayHello();*/
-
-		ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext("/applicationContext.xml") ;
-			HelloDao dao = ctx.getBean(HelloDao.class);
+			HelloDao dao = new HelloDaoImpl();
 			dao.sayHello();
+
+			/*ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext("/applicationContext.xml") ;
+				HelloDao dao = ctx.getBean(HelloDao.class);
+				dao.sayHello();*/
 	
 	}
 }
