@@ -1,5 +1,6 @@
 package org.study_spring;
 
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.study_spring.hello.HelloDao;
 import org.study_spring.impl.HelloDaoImpl;
@@ -27,5 +28,8 @@ public class App {
 		TestService service = ctx.getBean(TestService.class);
 		service.sayHello();
 		ctx.close();
+		
+		
+		//AnnotationConfigApplicationContext ctx =new AnnotationConfigApplicationContext();
 	}
 }
