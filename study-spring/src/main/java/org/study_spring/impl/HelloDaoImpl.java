@@ -1,5 +1,7 @@
 package org.study_spring.impl;
 
+import java.util.Scanner;
+
 import org.study_spring.hello.HelloDao;
 
 /**
@@ -18,10 +20,27 @@ public class HelloDaoImpl implements HelloDao {
 	 * sayHello。
 	 * @see org.study_spring.hello.HelloDao#sayHello()
 	 */
+	
+private String name;
+	
+
+	
 	@Override
 	public void sayHello() {
-		System.out.println("hello Spring!!!!sf!!");
+		System.out.println("hello:"+getName());
 
 	}
+
+
+	public String getName() {
+		return name;
+	}
+
+
+	public void setName(String name) {
+		this.name = name;
+	}
+	
+	
 
 }
